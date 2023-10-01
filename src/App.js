@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import './App.css';
 import Nav from './components/Nav';
+import Banner from './components/Banner';
 
 const Container = styled.main`
   position: relative;
@@ -22,9 +23,10 @@ const Container = styled.main`
 
 function App() {
   return (
-    <div className="App">
+    <Container>
       <Nav />
-    </div>
+      <Banner />
+    </Container>
   );
 }
 

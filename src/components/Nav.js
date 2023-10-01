@@ -30,20 +30,20 @@ const Logo = styled.a`
 `
 
 const Nav = () => {
-  const [show, setShow] = useState(false);
+  const [show, handleShow] = useState(false);
 
   useEffect(() => {
     window.addEventListener('scroll', () => {
       if (window.scrollY > 50) {
-        setShow(true);
+        handleShow(true);
       } else {
-        setShow(false);
+        handleShow(false);
       }
     })
     return () => {
-      window.removeEventListener('scroll', () => { })
-    }
-  }, [])
+      window.removeEventListener('scroll', () => { });
+    };
+  }, []);
 
   return (
     <NavWrapper show={show}>
