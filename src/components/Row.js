@@ -1,14 +1,14 @@
-import axios from '../api/axios';
 import React, { useCallback, useEffect, useState } from 'react'
+import MovieModal from './MovieModal';
+import styled from 'styled-components';
+import axios from '../api/axios';
 import "./Row.css"
-import MovieModal from './MovieModal/index';
-import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Scrollbar } from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/react';
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
-import styled from 'styled-components';
 
 const Container = styled.div`
   padding: 0 0 26px;
@@ -102,7 +102,7 @@ const Row = ({ title, id, fetchUrl }) => {
             <SwiperSlide key={movie.id}>
               <Wrap>
                 <img
-                  key={movie.id}
+                  className='row__poster'
                   src={`https://image.tmdb.org/t/p/original/${movie.backdrop_path}`}
                   alt={movie.name}
                   onClick={() => handleClick(movie)}
